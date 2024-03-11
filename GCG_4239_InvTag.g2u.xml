@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntaxEdit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BorderStyle>None</BorderStyle>
+  <Pages>
+    <DefaultPage>
+      <Header>
+        <Offset>
+          <X>0</X>
+          <Y>0</Y>
+        </Offset>
+      </Header>
+      <Footer>
+        <Offset>
+          <X>0</X>
+          <Y>0</Y>
+        </Offset>
+      </Footer>
+      <PageSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </PageSize>
+    </DefaultPage>
+  </Pages>
+  <DisplayStrings />
+  <Selection>
+    <SelectionRect>
+      <Location>
+        <X>0</X>
+        <Y>270</Y>
+      </Location>
+      <Size>
+        <Width>24</Width>
+        <Height>4</Height>
+      </Size>
+      <X>0</X>
+      <Y>270</Y>
+      <Width>24</Width>
+      <Height>4</Height>
+    </SelectionRect>
+    <Options>UseColors OverwriteBlocks SelectLineOnTripleClick CopyLineWhenEmpty SelectWordOnCtrlClick</Options>
+  </Selection>
+  <Gutter>
+    <LineNumbersForeColor>WindowText</LineNumbersForeColor>
+    <Options>PaintLineNumbers PaintBookMarks PaintLineModificators</Options>
+  </Gutter>
+  <Margin>
+    <Visible>false</Visible>
+  </Margin>
+  <LineStyles />
+  <LineSeparator />
+  <Printing>
+    <Footer>
+      <Offset>
+        <X>0</X>
+        <Y>0</Y>
+      </Offset>
+    </Footer>
+    <Header>
+      <Offset>
+        <X>0</X>
+        <Y>0</Y>
+      </Offset>
+    </Header>
+  </Printing>
+  <WhiteSpace />
+  <TextSource>
+    <Position>
+      <X>0</X>
+      <Y>270</Y>
+    </Position>
+    <Lexer>
+      <Scheme>
+        <Author>Quantum Whale, LLC.</Author>
+        <Copyright>Copyright (c) 2004 - 2014 Quantum Whale LLC.</Copyright>
+        <FileType>gas</FileType>
+        <Version>1.5</Version>
+        <Styles>
+          <Style>
+            <Name>idents</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>numbers</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>reswords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>comments</Name>
+            <ForeColor>Green</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>xmlcomments</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>symbols</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>whitespace</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>strings</Name>
+            <ForeColor>Maroon</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>directives</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>htmlparams</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>syntax errors</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>codes nippets</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>255:180:228:180</BackColor>
+          </Style>
+          <Style>
+            <Name>GabReservedWords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabTokenWithBrackets</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabFunctionIntrinsicDebug</Name>
+            <ForeColor>White</ForeColor>
+            <BackColor>Red</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>GabVariable</Name>
+            <ForeColor>Teal</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabVariableSystemDefined</Name>
+            <ForeColor>Teal</ForeColor>
+            <FontStyle>Bold Italic</FontStyle>
+          </Style>
+          <Style>
+            <Name>GabGui</Name>
+            <ForeColor>OrangeRed</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabProgramSubStartEnd</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>LightGray</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+        </Styles>
+      </Scheme>
+    </Lexer>
+    <TextStrings>
+      <Lines>
+        <string>Program.Sub.ScreenSU.Start</string>
+        <string>Gui.frmTAG..Create</string>
+        <string>Gui.frmTAG..Caption("Inventory TAG")</string>
+        <string>Gui.frmTAG..Size(3285,2760)</string>
+        <string>Gui.frmTAG..MinX(0)</string>
+        <string>Gui.frmTAG..MinY(0)</string>
+        <string>Gui.frmTAG..Position(0,0)</string>
+        <string>Gui.frmTAG..BackColor(-2147483633)</string>
+        <string>Gui.frmTAG..MaxButton(False)</string>
+        <string>Gui.frmTAG..MinButton(False)</string>
+        <string>Gui.frmTAG..MousePointer(0)</string>
+        <string>Gui.frmTAG..Event(UnLoad,frmTAG_UnLoad)</string>
+        <string>Gui.frmTAG.cmdOk.Create(Button)</string>
+        <string>Gui.frmTAG.cmdOk.Size(1020,375)</string>
+        <string>Gui.frmTAG.cmdOk.Position(180,1815)</string>
+        <string>Gui.frmTAG.cmdOk.Caption("Print TAG")</string>
+        <string>Gui.frmTAG.cmdOk.Event(Click,cmdOk_Click)</string>
+        <string>Gui.frmTAG.lbl1.Create(Label,"Inventory Date",True,1155,255,0,195,210,True,0,"Arial",8,-2147483633,0)</string>
+        <string>Gui.frmTAG.dtInv.Create(DatePicker)</string>
+        <string>Gui.frmTAG.dtInv.Size(1230,285)</string>
+        <string>Gui.frmTAG.dtInv.Position(1395,150)</string>
+        <string>Gui.frmTAG.lbl2.Create(Label,"Starting TAG",True,1185,255,0,210,630,True,0,"Arial",8,-2147483633,0)</string>
+        <string>Gui.frmTAG.txtStartTAG.Create(TextBox,"",True,1215,300,0,1395,615,True,0,"Arial",8,-2147483643,1)</string>
+        <string>Gui.frmTAG.txtStartTAG.MaxLength(7)</string>
+        <string>Gui.frmTAG.txtStartTAG.NumericOnly(True)</string>
+        <string>Gui.frmTAG.chkTAG.Create(CheckBox)</string>
+        <string>Gui.frmTAG.chkTAG.Size(1215,360)</string>
+        <string>Gui.frmTAG.chkTAG.Position(210,945)</string>
+        <string>Gui.frmTAG.chkTAG.Caption("Blank TAG")</string>
+        <string>Gui.frmTAG.chkTAG.Event(Click,chkTAG_Click)</string>
+        <string>Gui.frmTAG.lblQty.Create(Label,"Quantity",True,735,255,0,600,1305,False,0,"Arial",8,-2147483633,0)</string>
+        <string>Gui.frmTAG.txtQty.Create(TextBox,"",True,1215,300,0,1395,1245,False,0,"Arial",8,-2147483643,1)</string>
+        <string>Gui.frmTAG.txtQty.NumericOnly(True)</string>
+        <string>Program.Sub.ScreenSU.End</string>
+        <string />
+        <string>Program.Sub.Preflight.Start</string>
+        <string>Program.Sub.Preflight.End</string>
+        <string />
+        <string>Program.Sub.Main.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string />
+        <string>Function.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)</string>
+        <string />
+        <string>gui.frmTAG..Show </string>
+        <string />
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.Main.End</string>
+        <string />
+        <string>Program.Sub.frmTAG_UnLoad.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string />
+        <string />
+        <string>f.ODBC.Connection!con.Close </string>
+        <string>f.Intrinsic.Control.End </string>
+        <string />
+        <string />
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.frmTAG_UnLoad.End</string>
+        <string />
+        <string>Program.Sub.cmdOk_Click.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string>V.local.sSQL.Declare(String)</string>
+        <string />
+        <string>f.Intrinsic.Control.If(v.Screen.frmTAG!dtInv.Value,&gt;,v.Ambient.Date)</string>
+        <string>	f.Intrinsic.UI.Msgbox("Date cannot be future date")</string>
+        <string>	gui.frmTAG.dtInv.SetFocus </string>
+        <string>	f.Intrinsic.Control.ExitSub </string>
+        <string>f.Intrinsic.Control.ElseIf(v.Screen.frmTAG!txtStartTAG.Text,=,"")</string>
+        <string>	f.Intrinsic.UI.Msgbox("Invalid starting TAG")</string>
+        <string>	gui.frmTAG.txtStartTAG.SetFocus </string>
+        <string>	f.Intrinsic.Control.ExitSub</string>
+        <string>f.Intrinsic.Control.ElseIf(v.Screen.frmTAG!chkTAG.Value,=,1)</string>
+        <string>	f.Intrinsic.Control.If(v.Screen.frmTAG!txtQty.Text,=,"")</string>
+        <string>		f.Intrinsic.UI.Msgbox("Invalid Quantity")</string>
+        <string>		gui.frmTAG.txtQty.SetFocus </string>
+        <string>		f.Intrinsic.Control.ExitSub </string>
+        <string>	f.Intrinsic.Control.endif</string>
+        <string>f.Intrinsic.Control.endif</string>
+        <string />
+        <string>F.Intrinsic.UI.InvokeWaitDialog("Please wait while the TAG is generated.","Generate Report")</string>
+        <string />
+        <string>f.ODBC.Connection!con.Execute("delete from  GCG_4239_InvTag")</string>
+        <string />
+        <string />
+        <string>f.Intrinsic.Control.If(v.Screen.frmTAG!chkTAG.Value,=,1)</string>
+        <string>	f.Intrinsic.Control.CallSub(create_blanktag)</string>
+        <string>f.Intrinsic.Control.else</string>
+        <string>	f.Intrinsic.Control.CallSub(create_tag)</string>
+        <string>f.Intrinsic.Control.endif</string>
+        <string />
+        <string>f.Intrinsic.Control.CallSub(callbi)</string>
+        <string />
+        <string>f.Intrinsic.Control.CallSub(frmtag_unload)</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.cmdOk_Click.End</string>
+        <string />
+        <string>Program.Sub.Create_BlankTAG.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Create_BlankTAG_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string>V.Local.i.Declare(long)</string>
+        <string>V.local.sSQL.Declare(String)</string>
+        <string />
+        <string />
+        <string>f.Intrinsic.Control.For(v.Local.i,1,v.Screen.frmTAG!txtQty.Text,1)</string>
+        <string>	F.Intrinsic.String.Build("insert into GCG_4239_InvTag(BIRUNID,TAG_DUP)values (1,{0})",v.Screen.frmTAG!txtStartTAG.Text,V.local.sSQL)</string>
+        <string>	f.ODBC.Connection!con.Execute(V.local.sSQL)</string>
+        <string>f.Intrinsic.Control.Next(v.Local.i)</string>
+        <string />
+        <string>f.ODBC.Connection!con.Execute("update GCG_4239_InvTag set TAG_DUP = (TAG_DUP+TAG) - 1 ")</string>
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Create_BlankTAG_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.Create_BlankTAG.End</string>
+        <string />
+        <string>Program.Sub.Create_TAG.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Create_TAG_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string>V.local.sSQL.Declare(String)</string>
+        <string>V.local.dtDate.Declare(Date)</string>
+        <string>V.local.sSQLsub.Declare(String)</string>
+        <string />
+        <string />
+        <string>'F.Intrinsic.Debug.InvokeDebugger</string>
+        <string>'</string>
+        <string>'F.Intrinsic.Debug.Stop</string>
+        <string />
+        <string>'F.Intrinsic.UI.ChangeWaitStatus("Building shipment file . . .",V.Local.iCt,1,V.Local.iMax)</string>
+        <string />
+        <string>f.Intrinsic.Control.If(v.Screen.frmTAG!dtInv.Value,=,v.Ambient.Date)</string>
+        <string>	F.Intrinsic.String.Build("insert into GCG_4239_InvTag(BIRUNID,part,location,bin,description,Um,DupFld,On_hand,TAG_Dup) select 1,part,location,bin,description,Um_Inventory,'',Qty_Onhand,{0} from INVENTORY_MSTR where Qty_Onhand &gt; 0 order by BIN",v.Screen.frmTAG!txtStartTAG.Text,V.local.sSQL)</string>
+        <string>f.Intrinsic.Control.Else</string>
+        <string>	V.local.dtDate.Set(v.Screen.frmTAG!dtInv.Value)</string>
+        <string>'	F.Intrinsic.String.Build("insert into GCG_4239_InvTag(BIRUNID,part,location,description,Um,On_hand,TAG_Dup) select  1,A.part,A.location,description,Um_Inventory,(select top 1 new_onhand from v_Inventory_Hist where A.part= part and A.date_history = date_history and A.INV_HIST_TIME = INV_HIST_TIME ) as new_onhand,{0}  from v_Inventory_Hist A Join INVENTORY_MSTR B on A.part = B.part and A.location = B.location where new_onhand &gt; 0 AND date_history = '{1}'",v.Screen.frmTAG!txtStartTAG.Text,V.local.dtDate.PervasiveDate,V.local.sSQL)</string>
+        <string>	F.Intrinsic.String.Build("insert into GCG_4239_InvTag(BIRUNID,part,location,bin,description,Um,DupFld,On_hand,TAG_Dup,Date_INV) select distinct 1,A.part,A.location,A.bin,description,Um_Inventory,max(INV_HIST_TIME),(select top 1 new_onhand from v_Inventory_Hist where A.part= part and A.date_history = date_history and A.INV_HIST_TIME = INV_HIST_TIME ) as new_onhand,{0},date_history  from v_Inventory_Hist A Join INVENTORY_MSTR B on A.part = B.part and A.location = B.location where new_onhand &gt; 0 AND date_history = '{1}' group by A.part,A.location,description,Um_Inventory,{0},date_history order by A.BIN",v.Screen.frmTAG!txtStartTAG.Text,V.local.dtDate.PervasiveDate,V.local.sSQL)</string>
+        <string>f.Intrinsic.Control.endif</string>
+        <string />
+        <string>'F.Data.DataTable.CreateFromSQL("dtINVTAG","con",V.local.sSQL,True)</string>
+        <string>''DBCC CHECKIDENT('tableName', RESEED, 0)'</string>
+        <string />
+        <string />
+        <string>'f.Intrinsic.String.Build("DBCC CHECKIDENT('{0}', RESEED, {1})","GCG_4239_InvTag",v.Screen.frmTAG!txtStartTAG.Text,v.local.sSQLsub)</string>
+        <string>'f.ODBC.Connection!con.Execute(V.local.sSQLsub)</string>
+        <string />
+        <string>f.ODBC.Connection!con.Execute(V.local.sSQL)</string>
+        <string>f.ODBC.Connection!con.Execute("update GCG_4239_InvTag set TAG_DUP = (TAG_DUP+TAG) - 1 ")</string>
+        <string />
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Create_TAG_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.Create_TAG.End</string>
+        <string />
+        <string>Program.Sub.chkTAG_Click.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Create_TAG_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string />
+        <string>f.Intrinsic.Control.If(v.Screen.frmTAG!chkTAG.Value,=,1)</string>
+        <string>	gui.frmTAG.lblQty.Enabled(True)</string>
+        <string>	gui.frmTAG.txtQty.Enabled(True)</string>
+        <string>f.Intrinsic.Control.Else </string>
+        <string>	gui.frmTAG.lblQty.Enabled(False)</string>
+        <string>	gui.frmTAG.txtQty.Enabled(False)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Create_TAG_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.chkTAG_Click.End</string>
+        <string />
+        <string>Program.Sub.CallBI.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("CallBI_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string />
+        <string />
+        <string>V.Local.sRptID.Declare(string)</string>
+        <string>V.local.iBIRunID.Declare(long)</string>
+        <string>V.local.iLogID.Declare(long)</string>
+        <string>V.Local.iRet.Declare(long)</string>
+        <string />
+        <string />
+        <string>'F.Intrinsic.Debug.InvokeDebugger</string>
+        <string>'</string>
+        <string>'F.Intrinsic.Debug.Stop</string>
+        <string />
+        <string>'V.Local.sRptID.set("GCG_4239_InvTag.rpt")</string>
+        <string />
+        <string>'F.Global.BI.GetIDFromName(V.Local.sRptID,V.Local.sRptID)</string>
+        <string>F.Global.BI.GetRunID(V.local.iBIRunID)</string>
+        <string>'F.Global.BI.StartLogging(V.local.iBIRunID,V.Local.sRptID,0,"",V.local.iLogID)</string>
+        <string>F.Global.BI.StartLogging(V.local.iBIRUNID,-1,-1,"",V.local.iLogID)</string>
+        <string />
+        <string>F.Global.BI.StopLogging(V.local.iLogID)</string>
+        <string />
+        <string>F.Global.BI.RunReportPreProcessor(V.local.iBIRunID,V.local.iLogID,"","","",-1,True,"",-1,"",-1,"","",V.Local.iRet)</string>
+        <string />
+        <string />
+        <string />
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("CallBI_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.CallBI.End</string>
+        <string />
+        <string>Program.Sub.Comments.Start</string>
+        <string>${$0$}$GCG_4239_InvTag.g2u$}$RAN$}$12/21/2016 4:25:43 PM$}$False</string>
+        <string>${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This custom report will generate Inventory Tags based off of a starting number and date selected by the user.  </string>
+        <string>This customer report will allow the user to enter in the starting value which will increment by one for each part number that is found with a quantity on hand &gt; 0 as of a certain date. This date will also be selected by the user on the startup screen.</string>
+        <string>Program.Sub.Comments.End</string>
+      </Lines>
+    </TextStrings>
+  </TextSource>
+  <Scrolling>
+    <WindowOriginY>183</WindowOriginY>
+    <Options>None</Options>
+  </Scrolling>
+  <Outlining>
+    <AllowOutlining>true</AllowOutlining>
+    <ImageSize>8</ImageSize>
+    <Ranges>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>0</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>33</Y>
+        </EndPoint>
+        <Text>Program.Sub.ScreenSU</Text>
+        <DisplayText>Program.Sub.ScreenSU</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>35</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>36</Y>
+        </EndPoint>
+        <Text>Program.Sub.Preflight</Text>
+        <DisplayText>Program.Sub.Preflight</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>38</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>58</Y>
+        </EndPoint>
+        <Text>Program.Sub.Main</Text>
+        <DisplayText>Program.Sub.Main</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>60</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>81</Y>
+        </EndPoint>
+        <Text>Program.Sub.frmTAG_UnLoad</Text>
+        <DisplayText>Program.Sub.frmTAG_UnLoad</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>83</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>129</Y>
+        </EndPoint>
+        <Text>Program.Sub.cmdOk_Click</Text>
+        <DisplayText>Program.Sub.cmdOk_Click</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>131</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>156</Y>
+        </EndPoint>
+        <Text>Program.Sub.Create_BlankTAG</Text>
+        <DisplayText>Program.Sub.Create_BlankTAG</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>158</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>202</Y>
+        </EndPoint>
+        <Text>Program.Sub.Create_TAG</Text>
+        <DisplayText>Program.Sub.Create_TAG</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>204</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>227</Y>
+        </EndPoint>
+        <Text>Program.Sub.chkTAG_Click</Text>
+        <DisplayText>Program.Sub.chkTAG_Click</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>229</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>268</Y>
+        </EndPoint>
+        <Text>Program.Sub.CallBI</Text>
+        <DisplayText>Program.Sub.CallBI</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>270</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>274</Y>
+        </EndPoint>
+        <Text>Program.Sub.Comments</Text>
+        <DisplayText>Program.Sub.Comments</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+    </Ranges>
+  </Outlining>
+  <HyperText />
+  <Spelling />
+  <Braces />
+</SyntaxEdit>
