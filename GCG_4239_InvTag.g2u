@@ -1,0 +1,275 @@
+Program.Sub.ScreenSU.Start
+Gui.frmTAG..Create
+Gui.frmTAG..Caption("Inventory TAG")
+Gui.frmTAG..Size(3285,2760)
+Gui.frmTAG..MinX(0)
+Gui.frmTAG..MinY(0)
+Gui.frmTAG..Position(0,0)
+Gui.frmTAG..BackColor(-2147483633)
+Gui.frmTAG..MaxButton(False)
+Gui.frmTAG..MinButton(False)
+Gui.frmTAG..MousePointer(0)
+Gui.frmTAG..Event(UnLoad,frmTAG_UnLoad)
+Gui.frmTAG.cmdOk.Create(Button)
+Gui.frmTAG.cmdOk.Size(1020,375)
+Gui.frmTAG.cmdOk.Position(180,1815)
+Gui.frmTAG.cmdOk.Caption("Print TAG")
+Gui.frmTAG.cmdOk.Event(Click,cmdOk_Click)
+Gui.frmTAG.lbl1.Create(Label,"Inventory Date",True,1155,255,0,195,210,True,0,"Arial",8,-2147483633,0)
+Gui.frmTAG.dtInv.Create(DatePicker)
+Gui.frmTAG.dtInv.Size(1230,285)
+Gui.frmTAG.dtInv.Position(1395,150)
+Gui.frmTAG.lbl2.Create(Label,"Starting TAG",True,1185,255,0,210,630,True,0,"Arial",8,-2147483633,0)
+Gui.frmTAG.txtStartTAG.Create(TextBox,"",True,1215,300,0,1395,615,True,0,"Arial",8,-2147483643,1)
+Gui.frmTAG.txtStartTAG.MaxLength(7)
+Gui.frmTAG.txtStartTAG.NumericOnly(True)
+Gui.frmTAG.chkTAG.Create(CheckBox)
+Gui.frmTAG.chkTAG.Size(1215,360)
+Gui.frmTAG.chkTAG.Position(210,945)
+Gui.frmTAG.chkTAG.Caption("Blank TAG")
+Gui.frmTAG.chkTAG.Event(Click,chkTAG_Click)
+Gui.frmTAG.lblQty.Create(Label,"Quantity",True,735,255,0,600,1305,False,0,"Arial",8,-2147483633,0)
+Gui.frmTAG.txtQty.Create(TextBox,"",True,1215,300,0,1395,1245,False,0,"Arial",8,-2147483643,1)
+Gui.frmTAG.txtQty.NumericOnly(True)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Function.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+gui.frmTAG..Show 
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.frmTAG_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+f.ODBC.Connection!con.Close 
+f.Intrinsic.Control.End 
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.frmTAG_UnLoad.End
+
+Program.Sub.cmdOk_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.local.sSQL.Declare(String)
+
+f.Intrinsic.Control.If(v.Screen.frmTAG!dtInv.Value,>,v.Ambient.Date)
+	f.Intrinsic.UI.Msgbox("Date cannot be future date")
+	gui.frmTAG.dtInv.SetFocus 
+	f.Intrinsic.Control.ExitSub 
+f.Intrinsic.Control.ElseIf(v.Screen.frmTAG!txtStartTAG.Text,=,"")
+	f.Intrinsic.UI.Msgbox("Invalid starting TAG")
+	gui.frmTAG.txtStartTAG.SetFocus 
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.ElseIf(v.Screen.frmTAG!chkTAG.Value,=,1)
+	f.Intrinsic.Control.If(v.Screen.frmTAG!txtQty.Text,=,"")
+		f.Intrinsic.UI.Msgbox("Invalid Quantity")
+		gui.frmTAG.txtQty.SetFocus 
+		f.Intrinsic.Control.ExitSub 
+	f.Intrinsic.Control.endif
+f.Intrinsic.Control.endif
+
+F.Intrinsic.UI.InvokeWaitDialog("Please wait while the TAG is generated.","Generate Report")
+
+f.ODBC.Connection!con.Execute("delete from  GCG_4239_InvTag")
+
+
+f.Intrinsic.Control.If(v.Screen.frmTAG!chkTAG.Value,=,1)
+	f.Intrinsic.Control.CallSub(create_blanktag)
+f.Intrinsic.Control.else
+	f.Intrinsic.Control.CallSub(create_tag)
+f.Intrinsic.Control.endif
+
+f.Intrinsic.Control.CallSub(callbi)
+
+f.Intrinsic.Control.CallSub(frmtag_unload)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdOk_Click.End
+
+Program.Sub.Create_BlankTAG.Start
+F.Intrinsic.Control.SetErrorHandler("Create_BlankTAG_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(long)
+V.local.sSQL.Declare(String)
+
+
+f.Intrinsic.Control.For(v.Local.i,1,v.Screen.frmTAG!txtQty.Text,1)
+	F.Intrinsic.String.Build("insert into GCG_4239_InvTag(BIRUNID,TAG_DUP)values (1,{0})",v.Screen.frmTAG!txtStartTAG.Text,V.local.sSQL)
+	f.ODBC.Connection!con.Execute(V.local.sSQL)
+f.Intrinsic.Control.Next(v.Local.i)
+
+f.ODBC.Connection!con.Execute("update GCG_4239_InvTag set TAG_DUP = (TAG_DUP+TAG) - 1 ")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Create_BlankTAG_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Create_BlankTAG.End
+
+Program.Sub.Create_TAG.Start
+F.Intrinsic.Control.SetErrorHandler("Create_TAG_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.local.sSQL.Declare(String)
+V.local.dtDate.Declare(Date)
+V.local.sSQLsub.Declare(String)
+
+
+'F.Intrinsic.Debug.InvokeDebugger
+'
+'F.Intrinsic.Debug.Stop
+
+'F.Intrinsic.UI.ChangeWaitStatus("Building shipment file . . .",V.Local.iCt,1,V.Local.iMax)
+
+f.Intrinsic.Control.If(v.Screen.frmTAG!dtInv.Value,=,v.Ambient.Date)
+	F.Intrinsic.String.Build("insert into GCG_4239_InvTag(BIRUNID,part,location,bin,description,Um,DupFld,On_hand,TAG_Dup) select 1,part,location,bin,description,Um_Inventory,'',Qty_Onhand,{0} from INVENTORY_MSTR where Qty_Onhand > 0 order by BIN",v.Screen.frmTAG!txtStartTAG.Text,V.local.sSQL)
+f.Intrinsic.Control.Else
+	V.local.dtDate.Set(v.Screen.frmTAG!dtInv.Value)
+'	F.Intrinsic.String.Build("insert into GCG_4239_InvTag(BIRUNID,part,location,description,Um,On_hand,TAG_Dup) select  1,A.part,A.location,description,Um_Inventory,(select top 1 new_onhand from v_Inventory_Hist where A.part= part and A.date_history = date_history and A.INV_HIST_TIME = INV_HIST_TIME ) as new_onhand,{0}  from v_Inventory_Hist A Join INVENTORY_MSTR B on A.part = B.part and A.location = B.location where new_onhand > 0 AND date_history = '{1}'",v.Screen.frmTAG!txtStartTAG.Text,V.local.dtDate.PervasiveDate,V.local.sSQL)
+	F.Intrinsic.String.Build("insert into GCG_4239_InvTag(BIRUNID,part,location,bin,description,Um,DupFld,On_hand,TAG_Dup,Date_INV) select distinct 1,A.part,A.location,A.bin,description,Um_Inventory,max(INV_HIST_TIME),(select top 1 new_onhand from v_Inventory_Hist where A.part= part and A.date_history = date_history and A.INV_HIST_TIME = INV_HIST_TIME ) as new_onhand,{0},date_history  from v_Inventory_Hist A Join INVENTORY_MSTR B on A.part = B.part and A.location = B.location where new_onhand > 0 AND date_history = '{1}' group by A.part,A.location,description,Um_Inventory,{0},date_history order by A.BIN",v.Screen.frmTAG!txtStartTAG.Text,V.local.dtDate.PervasiveDate,V.local.sSQL)
+f.Intrinsic.Control.endif
+
+'F.Data.DataTable.CreateFromSQL("dtINVTAG","con",V.local.sSQL,True)
+''DBCC CHECKIDENT('tableName', RESEED, 0)'
+
+
+'f.Intrinsic.String.Build("DBCC CHECKIDENT('{0}', RESEED, {1})","GCG_4239_InvTag",v.Screen.frmTAG!txtStartTAG.Text,v.local.sSQLsub)
+'f.ODBC.Connection!con.Execute(V.local.sSQLsub)
+
+f.ODBC.Connection!con.Execute(V.local.sSQL)
+f.ODBC.Connection!con.Execute("update GCG_4239_InvTag set TAG_DUP = (TAG_DUP+TAG) - 1 ")
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Create_TAG_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Create_TAG.End
+
+Program.Sub.chkTAG_Click.Start
+F.Intrinsic.Control.SetErrorHandler("Create_TAG_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+f.Intrinsic.Control.If(v.Screen.frmTAG!chkTAG.Value,=,1)
+	gui.frmTAG.lblQty.Enabled(True)
+	gui.frmTAG.txtQty.Enabled(True)
+f.Intrinsic.Control.Else 
+	gui.frmTAG.lblQty.Enabled(False)
+	gui.frmTAG.txtQty.Enabled(False)
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Create_TAG_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.chkTAG_Click.End
+
+Program.Sub.CallBI.Start
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+V.Local.sRptID.Declare(string)
+V.local.iBIRunID.Declare(long)
+V.local.iLogID.Declare(long)
+V.Local.iRet.Declare(long)
+
+
+'F.Intrinsic.Debug.InvokeDebugger
+'
+'F.Intrinsic.Debug.Stop
+
+'V.Local.sRptID.set("GCG_4239_InvTag.rpt")
+
+'F.Global.BI.GetIDFromName(V.Local.sRptID,V.Local.sRptID)
+F.Global.BI.GetRunID(V.local.iBIRunID)
+'F.Global.BI.StartLogging(V.local.iBIRunID,V.Local.sRptID,0,"",V.local.iLogID)
+F.Global.BI.StartLogging(V.local.iBIRUNID,-1,-1,"",V.local.iLogID)
+
+F.Global.BI.StopLogging(V.local.iLogID)
+
+F.Global.BI.RunReportPreProcessor(V.local.iBIRunID,V.local.iLogID,"","","",-1,True,"",-1,"",-1,"","",V.Local.iRet)
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4239_InvTag.g2u.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.CallBI.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_4239_InvTag.g2u$}$RAN$}$12/21/2016 4:25:43 PM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This custom report will generate Inventory Tags based off of a starting number and date selected by the user.  
+This customer report will allow the user to enter in the starting value which will increment by one for each part number that is found with a quantity on hand > 0 as of a certain date. This date will also be selected by the user on the startup screen.
+Program.Sub.Comments.End
